@@ -7,14 +7,10 @@ namespace Codility_Console.BinaryGap
     class BinaryGapSolution : ISolution
     {
         List<int> binaryData;
-        List<int> gaps;
-        int gapCtr;
 
         public BinaryGapSolution()
         {
-            gapCtr = 0;
             binaryData = new List<int>();
-            gaps = new List<int>();
         }
 
         public void Run()
@@ -57,6 +53,11 @@ namespace Codility_Console.BinaryGap
 
         int FindLongestBinaryGap()
         {
+            // use the local variable rather than global, so it would get initialized and counted for.
+            // previous version had this as global variable and this list was getting appended with the values from previous executions. That was causing issues.
+            List<int> gaps = new List<int>();
+            int gapCtr = 0;
+
             var allOnes = binaryData.FindAll(ones => ones == 1);
             if (allOnes.Count < 2 || allOnes.Count == binaryData.Count) return 0;
 

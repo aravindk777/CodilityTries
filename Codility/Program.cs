@@ -8,9 +8,9 @@ namespace Codility
     {
         static void Main(string[] args)
         {
-            ISolution solution = new BinaryGapSolution();
+            ISolution solution = new BinaryGapSolutionV2(); // new BinaryGapSolution();
             solution.Run();
-            Console.Read();
+            // Console.Read();
         }
     }
 }
