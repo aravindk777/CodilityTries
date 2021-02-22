@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Codility_Console;
+using Codility_Console.BinaryGap;
+using System;
 
 namespace Codility
 {
@@ -6,7 +8,9 @@ namespace Codility
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            ISolution solution = new BinaryGapSolution();
+            solution.Run();
+            Console.Read();
         }
     }
 }
